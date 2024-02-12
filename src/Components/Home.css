@@ -1,0 +1,188 @@
+body {
+  width: 100%;
+
+  /* background: linear-gradient(45deg,#d2001a,#7462ff,#f48e21,#23d5ab); */
+  /* background-size: 100% 300%; */
+  animation: color 160s ease-in-out infinite;
+  height: 25rem;
+}
+@keyframes color {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  background-color: white;
+  /* padding: 20px 30px; */
+}
+
+table tr th {
+  padding: 20px;
+}
+
+table td {
+  border-bottom: 1px solid black;
+
+  padding: 15px;
+}
+
+.btn-add-student {
+  padding: 10px;
+  background-color: rgb(38, 179, 255);
+  color: white;
+  border: none;
+  font-size: medium;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  width: 150px;
+}
+
+.btn-add-student:hover {
+  background-color: black;
+  transition: 0.4s;
+}
+
+.TableCard {
+  margin: 0 auto;
+  margin-top: 100px;
+  /* padding: 30px;
+  padding-right: 30px; */
+}
+.TableCard h1 {
+  margin-bottom: 30px;
+  font-size: 50px;
+}
+.style-table {
+  margin: auto;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  max-width: 800px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-btn-edit {
+  background-color: hsl(120, 79%, 68%);
+  border: 1px solid black;
+  color: white;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+.btn-btn-edit:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.btn-btn-delete {
+  background-color: rgb(255, 78, 78);
+  border: 1px solid #000000;
+  color: white;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+.btn-btn-delete:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.btn-btn-view {
+  background-color: rgb(78, 140, 255);
+  border: 1px solid rgb(212, 208, 208);
+  color: white;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+.btn-btn-view:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.num-add {
+  color: black;
+  border: 2px solid black;
+  width: 20px;
+}
+
+/* .down-status{
+    color: white;
+    font-size: larger;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.down-active{
+    background-color: #4fa055;
+    color: white;
+    font-size: medium;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.down-inactive{
+    background-color: #c15555;
+    color: white;
+    font-size: medium;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.down-reset{
+    background-color: whitesmoke;
+    color: black;
+    font-size: medium;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+} */
+
+.dropdown {
+  padding: 10px;
+  background-color: rgb(38, 179, 255);
+  color: white;
+  border: none;
+  font-size: medium;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.ControlLine {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.BtnDiv {
+  display: flex;
+  justify-content: space-between;
+  gap: 506px;
+  align-items: center;
+}
+
+.ControlBtn {
+  display: flex;
+  gap: 10px;
+}
