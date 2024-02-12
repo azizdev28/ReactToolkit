@@ -3,32 +3,49 @@ import { Link } from "react-router-dom";
 import { EyeOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import "./Home.css";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteStudent } from "../features/studentSlice";
+import { deleteStudent, setSearchQuery } from "../features/studentSlice";
 import { toast } from "react-toastify";
 
-const Home = (id) => {
+const Home = () => {
   const students = useSelector((state) => state.student.value);
-  const [filter, setFilter] = useState("");
+  const [searchText, setSearchText] = useState("");
 
-  const filteredData = students.filter((val) => {
-    return val.status.toLowerCase().includes(filter.toLowerCase());
+  const filteredData = students.filter((student) => {
+    return (
+      student.name.toLowerCase().includes(searchText.toLowerCase()) ||
+      student.email.toLowerCase().includes(searchText.toLowerCase()) ||
+      student.phone.toLowerCase().includes(searchText.toLowerCase()) ||
+      student.status.toLowerCase().includes(searchText.toLowerCase())
+    );
   });
 
-  console.log("students data", students);
-  const dispatch = useDispatch("");
+  const dispatch = useDispatch();
+
   const onDeleteStudent = (id) => {
     if (
       window.confirm(
-        "Are you sure that you wanted to delete this particular student data ?"
+        "Are you sure that you want to delete this particular student data?"
       )
     ) {
       dispatch(deleteStudent({ id: id }));
-      toast("Deleted sucessfully!");
+      toast("Deleted successfully!");
     }
   };
+
   return (
     <div className="TableCard container">
-      <h1>Students</h1>
+      <div className="search-bar">
+        <h1>Students</h1>
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchText}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+            dispatch(setSearchQuery(e.target.value));
+          }}
+        />
+      </div>
 
       <table className="style-table">
         <thead>
@@ -42,37 +59,35 @@ const Home = (id) => {
           </tr>
         </thead>
         <tbody>
-          {filteredData.map((student, index) => {
-            return (
-              <tr id={student.id}>
-                <th className="num-add">{index + 1}</th>
-                <td>{student.name}</td>
-                <td>{student.email}</td>
-                <td>{student.phone}</td>
-                <td>{student.status}</td>
-                <td>
-                  <div className="ControlBtn">
-                    <Link to={`/update/${student.id}`}>
-                      <button className="btn-btn-edit">
-                        <EditOutlined />
-                      </button>
-                    </Link>
-                    <button
-                      className="btn-btn-delete"
-                      onClick={() => onDeleteStudent(student.id)}
-                    >
-                      <DeleteOutlined />
+          {filteredData.map((student, index) => (
+            <tr key={student.id}>
+              <th className="num-add">{index + 1}</th>
+              <td>{student.name}</td>
+              <td>{student.email}</td>
+              <td>{student.phone}</td>
+              <td>{student.status}</td>
+              <td>
+                <div className="ControlBtn">
+                  <Link to={`/update/${student.id}`}>
+                    <button className="btn-btn-edit">
+                      <EditOutlined />
                     </button>
-                    <Link to={`/view/${student.id}`}>
-                      <button className="btn-btn-view">
-                        <EyeOutlined />
-                      </button>
-                    </Link>
-                  </div>
-                </td>
-              </tr>
-            );
-          })}
+                  </Link>
+                  <button
+                    className="btn-btn-delete"
+                    onClick={() => onDeleteStudent(student.id)}
+                  >
+                    <DeleteOutlined />
+                  </button>
+                  <Link to={`/view/${student.id}`}>
+                    <button className="btn-btn-view">
+                      <EyeOutlined />
+                    </button>
+                  </Link>
+                </div>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
       <br />
@@ -82,17 +97,6 @@ const Home = (id) => {
         <Link to="/addstudent">
           <button className="btn-add-student">ADD STUDENT</button>
         </Link>
-        <select
-          name="status"
-          className="dropdown"
-          onChange={(e) => {
-            setFilter(e.target.value);
-          }}
-        >
-          <option value="">Group</option>
-          <option value="N32">N32</option>
-          <option value="N50">N50</option>
-        </select>
       </div>
     </div>
   );

@@ -1,0 +1,14 @@
+.EditCard form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.EditCard form input {
+  padding: 20px 30px;
+  font-size: 18px;
+}
+
+.EditCard h1 {
+  text-align: center;
+}

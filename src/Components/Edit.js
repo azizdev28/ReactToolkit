@@ -30,7 +30,8 @@ const Edit = () => {
   };
 
   return (
-    <div style={{ marginTop: "100px" }}>
+    <div style={{ marginTop: "100px" }} className="EditCard">
+      <h1>Edit Students</h1>
       <form
         className="form-edit"
         style={{
@@ -77,7 +78,7 @@ const Edit = () => {
           name="status"
           onChange={handleDropdownChange}
         >
-          <option>Please select status</option>
+          <option>Please select Group</option>
           <option
             className="active-field"
             value="N32"

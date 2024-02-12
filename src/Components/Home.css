@@ -114,49 +114,17 @@ table td {
   border: 2px solid black;
   width: 20px;
 }
-
-/* .down-status{
-    color: white;
-    font-size: larger;
-    font-weight: 600;
-    font-family: 'Times New Roman', Times, serif;
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 320px;
 }
-
-.down-active{
-    background-color: #4fa055;
-    color: white;
-    font-size: medium;
-    font-weight: 600;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border: none;
-    border-radius: 5px;
-    margin: 10px;
-    cursor: pointer;
+.search-bar input {
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 8px;
 }
-
-.down-inactive{
-    background-color: #c15555;
-    color: white;
-    font-size: medium;
-    font-weight: 600;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border: none;
-    border-radius: 5px;
-    margin: 10px;
-    cursor: pointer;
-}
-
-.down-reset{
-    background-color: whitesmoke;
-    color: black;
-    font-size: medium;
-    font-weight: 600;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border: none;
-    border-radius: 5px;
-    margin: 10px;
-    cursor: pointer;
-} */
 
 .dropdown {
   padding: 10px;

@@ -1,43 +1,53 @@
-.heading-two{
-    color: rgb(0, 0, 0);
-    font-size: xx-large;
-    font-weight: 600;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
-    text-transform: uppercase;
-    opacity: 100%;
+.viewCard {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.card {
+  padding: 10px 30px;
+}
+.heading-two {
+  color: rgb(0, 0, 0);
+  font-size: xx-large;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  opacity: 100%;
 }
 
-.inside-color{
-    color: rgb(236, 9, 9);
-    font-size: medium;
-    font-weight: 600;
-    opacity: 100%;
+.inside-color {
+  color: rgb(236, 9, 9);
+  font-size: medium;
+  font-weight: 600;
+  font-size: 30px;
+  opacity: 100%;
 }
 
-.out-color{
-    color: black;
-    font-size: x-large;
-    font-weight: 600;
-    opacity: 100%;
+.out-color {
+  color: black;
+  font-size: x-large;
+  font-weight: 600;
+  opacity: 100%;
 }
 
-.card{
-    background-color: white ;
-    opacity: 0.7;
-    border: 1px solid black;
-    width: auto;
-    /* display: flex; */
-    margin: auto;
-    border-radius: 10px;
+.card {
+  background-color: white;
+  opacity: 0.7;
+  border: 1px solid black;
+  width: auto;
+  /* display: flex; */
+  margin: auto;
+  border-radius: 10px;
 }
 
-.btn-view{
-    background-color: whitesmoke;
-    color: green;
-    padding: 5px;
-    border-radius: 5px;
-    border: none;
-    font-size: large;
-    font-weight: 600;
-    cursor: pointer;
+.btn-view {
+  background-color: whitesmoke;
+  color: green;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  font-size: large;
+  font-weight: 600;
+  cursor: pointer;
 }

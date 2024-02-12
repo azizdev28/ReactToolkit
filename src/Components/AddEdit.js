@@ -1,17 +1,11 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import { toast } from 'react-toastify';
+
 import "./AddEdit.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addStudent } from "../features/studentSlice";
 import { toast } from "react-toastify";
 
-// const initialstate = {
-//     name: "",
-//     email: "",
-//     phone: "",
-//     status: "",
-// };
 const AddEdit = () => {
   const [state, setState] = useState({
     name: "",
@@ -21,7 +15,7 @@ const AddEdit = () => {
   });
   const navigate = useNavigate("");
   const dispatch = useDispatch();
-  // const{name, email, phone, status} = state;
+
   const student = useSelector((state) => state.student.value);
 
   const handleInputChange = (e) => {
@@ -34,7 +28,6 @@ const AddEdit = () => {
     setState({ ...state, [name]: value });
   };
 
-  // const history = useHistory();
   const handleSubmit = () => {
     dispatch(addStudent({ id: student.length + 1, ...state }));
     toast("Added sucessfully!");
@@ -42,7 +35,8 @@ const AddEdit = () => {
   };
 
   return (
-    <div style={{ marginTop: "100px" }}>
+    <div style={{ marginTop: "100px" }} className="AddStudents">
+      <h1>Add New Student</h1>
       <form
         className="form-edit"
         style={{
@@ -82,7 +76,7 @@ const AddEdit = () => {
         <br />
         <br />
         <label className="status-label" htmlFor="status">
-          Branch
+          Group
         </label>
         <select
           className="field-design"
